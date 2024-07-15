@@ -1,0 +1,15 @@
+Sno,Age,Income,Student,Credit,Buy
+1,18,50000,yes,1,no
+2,18,50000,no,2,no
+3,25,50000,no,1,yes
+4,60,30000,no,1,yes
+5,62,10000,yes,1,yes
+6,60,10000,yes,2,no
+7,27,10000,yes,2,yes
+8,16,30000,no,1,no
+9,20,10000,yes,1,yes
+10,69,30000,yes,1,yes
+11,20,30000,yes,2,yes
+12,28,30000,no,2,yes
+13,29,50000,yes,1,yes
+14,68,30000,no,2,no

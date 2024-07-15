@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #bf1717, #949615);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 310px;
+    height:380px;
+    background: #030303;
+    padding: 10px;
+    border-radius: 8px;
+    margin:10px;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+}
+
+.calculator {
+    background-color: #030303;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to separate the calculator and anchor tag */
+}
+
+.display {
+    background-color: #fffbfb;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    padding: 5px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+button {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #1f41b2;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.left-buttons,
+.right-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1px;
+    gap: 10px;
+}
+
+.right-buttons {
+    flex-direction: column;
+}
+
+.dot {
+    margin-right: 2px;
+    padding-left: 20px;
+}
+
+.clc {
+    padding-right: 10px;
+}
+
+.back {
+    margin-top: 50px;
+    border-radius: 100px;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fffbfb;
+    cursor: pointer;
+}

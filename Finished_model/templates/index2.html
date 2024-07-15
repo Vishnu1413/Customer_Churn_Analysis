@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(120deg, #bf1717, #949615);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            /* Center the form */
+            padding: 20px;
+            background-color: #ffffff;
+            /* White background color for the form */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for a subtle effect */
+        }
+
+        .input-icon {
+            position: relative;
+        }
+        .input-icon i {
+    position: absolute;
+    left: 8px; /* Initial position */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    width: 20px; /* Adjust this value according to your icon size */
+    text-align: center;
+    pointer-events: none; /* Make sure the icon does not interfere with input events */
+    z-index: 1; 
+    margin-top: 14px; /* Ensure icons are above the input text */
+}
+
+.input-icon input {
+    padding-left: 40px;
+    /* Adjust this value based on the total width of the icon and left position */
+}
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container mt-5">
+            <h2 class="text-center mb-4"style="color: #13f308;">CHURN PREDICTION</h2>
+            <form method="post" action="/predict" onsubmit="return validate()">
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="CreditScore"><i class="fas fa-credit-card"></i> Credit Score</label>
+                    <input type="number" class="form-control" id="CreditScore" name="CreditScore" placeholder="Credit Score" required>
+                </div>
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Age"><i class="fas fa-user"></i> Age</label>
+                    <input type="number" class="form-control" id="Age" name="Age" placeholder="Age" required>
+                </div>
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Tenure"><i class="fas fa-clock"></i> Tenure</label>
+                    <input type="number" class="form-control" id="Tenure" name="Tenure" placeholder="Tenure" required>
+                </div>
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Balance"><i class="fas fa-balance-scale"></i> Balance</label>
+                    <input type="number" class="form-control" id="Balance" name="Balance" placeholder="Balance" required>
+                </div>
+                
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="HasCrCard"><i class="far fa-credit-card"></i> Has Credit Card</label>
+                    <input type="text" class="form-control" id="HasCrCard" name="HasCrCard" placeholder="Has Credit Card" required>
+                </div>
+                <p id="CreditMessage" style="color: #ff0000;"class="mt-2"></p>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="IsActiveMember"><i class="fas fa-user-check"></i> Is Active Member</label>
+                    <input type="text" class="form-control" id="IsActiveMember" name="IsActiveMember" placeholder="Is Active Member" required>
+                </div>
+                <p id="ActiveMessage" class="mt-2"style="color: #ff0000;"></p>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Geography"><i class="fas fa-globe"></i> Geography</label>
+                    <input type="text" class="form-control" id="Geography" name="Geography" placeholder="Geography" required>
+                </div>
+                <p id="geographyMessage" class="mt-2"style="color: #ff0000;"></p>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="EstimatedSalary"><i class="fas fa-money-bill-wave"></i> Estimated Salary</label>
+                    <input type="number" class="form-control" id="EstimatedSalary" name="EstimatedSalary" placeholder="Estimated Salary" required>
+                </div>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Gender"><i class="fas fa-venus-mars"></i> Gender</label>
+                    <input type="text" class="form-control" id="Gender" name="Gender" placeholder="Gender" required>
+                </div>
+                <p id="genderMessage" class="mt-2" style="color: #ff0000;"></p>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="Exited"><i class="fas fa-sign-out-alt"></i> Debt</label>
+                    <input type="text" class="form-control" id="Exited" name="Exited" placeholder="Debt" required>
+                </div>
+                <p id="ExitedMessage" class="mt-2" style="color: #ff0000;"></p>
+
+                <div class="form-group input-icon">
+                    <label style="color: #0d00ff;" for="NumOfProducts"><i class="fas fa-layer-group"></i> Num Of Products</label>
+                    <input type="number" class="form-control" id="NumOfProducts" name="NumOfProducts" placeholder="Num Of Products" required>
+                </div>  
+                
+                <div class="form-group mt-4 text-center">
+                    <input type="submit" class="btn btn-primary" value="CHECK">
+                </div>
+                                   
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function validate() {
+
+        var CreditInput = document.getElementById('HasCrCard').value.toLowerCase();
+        if (CreditInput === 'yes' || CreditInput === 'no') {
+            document.getElementById('CreditMessage').innerHTML = '';
+        } else {
+            document.getElementById('CreditMessage').innerHTML = 'Please Choose Yes or No';
+            return false;
+        }
+        
+        var ActiveInput = document.getElementById('IsActiveMember').value.toLowerCase();
+        if (ActiveInput === 'yes' || ActiveInput === 'no') {
+            document.getElementById('ActiveMessage').innerHTML = '';
+        } else {
+            document.getElementById('ActiveMessage').innerHTML = 'Please Choose Yes or No';
+            return false;
+        }
+
+        var ExitedInput = document.getElementById('Exited').value.toLowerCase();
+        if (ExitedInput === 'yes' || ExitedInput === 'no') {
+            document.getElementById('ExitedMessage').innerHTML = '';
+        } else {
+            document.getElementById('ExitedMessage').innerHTML = 'Please Choose Yes or No';
+            return false;
+        }
+        var geographyInput = document.getElementById('Geography').value.toLowerCase();
+        if (geographyInput === 'spain' || geographyInput === 'france' || geographyInput === 'germany')
+        {
+            document.getElementById('geographyMessage').innerHTML = '';
+        } else {
+            document.getElementById('geographyMessage').innerHTML = 'Please Choose any one Spain,France,germany';
+            return false;
+        }
+
+        var genderInput = document.getElementById('Gender').value.toLowerCase();
+        if (genderInput === 'male' || genderInput === 'female') {
+            document.getElementById('genderMessage').innerHTML = '';
+        } else {
+            document.getElementById('genderMessage').innerHTML = 'Please Choose gender Correctly';
+            return false;
+        }
+
+    
+    // All validations passed, allow form submission
+    return true;
+}
+    </script>
+</body>
+
+</html>

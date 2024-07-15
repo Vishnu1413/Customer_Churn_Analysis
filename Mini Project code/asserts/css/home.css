@@ -1,0 +1,186 @@
+body{
+    background-color: rgb(2, 154, 248);
+    }
+    .head{
+    text-align: center;
+    background-color: red;
+    }
+    .im{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-top: 40px;
+    }
+    .imtyg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding-top: 40px;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+    }
+    .imtype{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    }
+    p{
+    text-align: center;
+    font-size: x-large;
+    }
+    .links ul
+    {
+    text-align: right;
+    margin-top:30px;
+    margin-bottom:30px;
+    }
+    .links ul li
+    {
+    display:inline;
+    margin-right:30px;
+    }
+    .links ul li a
+    {
+    color:darkblue;
+    font-size:20px;
+    }
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    }
+    th, td {
+    text-align: left;
+    padding: 8px;
+    }
+    tr:nth-child(odd){background-color: #f4cf2d}
+    tr:nth-child(even){background-color: #e718b0c4}
+    th {
+    background-color: #155617;
+    color: white;
+    }
+    footer {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    background-color: #000000;
+    margin-top: 20px;
+    }
+    .cop{
+    position: relative;
+    width: 100%;
+    color: #ffffff;
+    line-height: 40px;
+    font-size:x-large;
+    text-align: center;
+    bottom:0;
+    }
+    .imy{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: 500px;
+    padding-top: 40px;
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+    }
+    @keyframes rotate {
+    0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    }
+    }
+    
+    @keyframes example {
+    0% {background-color:rgb(30, 255, 0); left:0px; top:0px;}
+    100% {background-color:yellow; left:200px; top:0px;}
+    }
+    .rect {
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    float: right;
+    position: relative;
+    background-color: rgb(248, 5, 122);
+    animation: rotate 4s linear infinite;
+    }
+    .cir{
+    float: right;
+    }
+    #zoom {
+    padding: 50px;
+    background-color: rgb(2, 154, 248);
+    transition: transform .2s;
+    margin: 0 auto;
+    }
+    #zoom:hover {
+    transform: scale(1.5);
+    background-color: rgb(4, 0, 255); }
+    #zoomp {
+        padding: 50px;
+        background-color: rgb(2, 154, 248);
+        transition: transform .2s;
+        margin: 0 auto;
+        }
+    #zoomp:hover {
+        transform: scale(1.5);
+     }
+        
+
+    #gato{
+        background: url('https://res.cloudinary.com/pastelitos/image/upload/v1610526571/eva/gatito_pushui.svg');
+        height: 297px; 
+        width: 507.5px;
+        margin-top: 2em;
+        margin-left: 2em;
+        z-index: 10;
+        -webkit-animation: sprite-animation 1.2s steps(16,end) infinite;
+        -moz-animation: sprite-animation 1.2s steps(16,end) infinite; 
+        -ms-animation: sprite-animation 1.2s steps(16,end) infinite; 
+        animation: sprite-animation 1.2s steps(16,end) infinite;
+        }
+    
+    @-webkit-keyframes sprite-animation { 
+            from { background-position: 0 0; }
+            to { background-position: -8120px 0; } 
+        }
+    
+    @-ms-keyframes sprite-animation { 
+            from { background-position: 0 0; }
+            to { background-position: -8120px 0; }
+        }
+    
+    @-moz-keyframes sprite-animation { 
+            from { background-position: 0 0; }
+            to { background-position: -8120px 0; }
+        }
+    
+    @keyframes sprite-animation { 
+            from { background-position: 0 0; }
+            to { background-position: -8120px 0; }
+        }
+        
+.container .btn {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            color: black;
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            float: left;
+            border-radius: 5px;
+            margin-left: 50px;
+            text-align: center;
+          }
+          
+          .container .btn:hover {
+            background-color: black;
+            color: white;
+          }

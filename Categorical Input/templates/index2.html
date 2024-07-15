@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Analysis</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(120deg, #bf1717, #949615);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            /* Center the form */
+            padding: 20px;
+            background-color: #ffffff;
+            /* White background color for the form */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            /* Box shadow for a subtle effect */
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon input {
+            padding-left: 40px;
+        }
+
+        .input-icon i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container mt-5">
+            <h2 class="text-center mb-4">CHURN CHECKING</h2>
+            <form method="post" action="/predict">
+                <div class="form-group input-icon">
+                    <i class="fas fa-credit-card"></i>
+                    <input type="text" class="form-control" name="CreditScore" placeholder="Credit Score" required>
+                </div>
+                <div class="form-group input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" name="Age" placeholder="Age" required>
+                </div>
+                <div class="form-group input-icon">
+                    <i class="fas fa-clock"></i>
+                    <input type="text" class="form-control" name="Tenure" placeholder="Tenure" required>
+                </div>
+                <div class="form-group input-icon">
+                    <i class="fas fa-balance-scale"></i>
+                    <input type="text" class="form-control" name="Balance" placeholder="Balance" required>
+                </div>
+                <div class="form-group input-icon">
+                    <i class="far fa-credit-card"></i>
+                    <input type="text" class="form-control" name="HasCrCard" placeholder="Has Credit Card" required>
+                </div>
+                
+                <div class="form-group input-icon">
+                    <i class="fas fa-user-check"></i>
+                    <input type="text" class="form-control" name="IsActiveMember" placeholder="Is Active Member"
+                        required>
+                </div>
+
+                <div class="form-group input-icon">
+                    <i class="fas fa-globe"></i>
+                    <input type="text" class="form-control" name="Geography" placeholder="Geography" required>
+                </div>
+
+                <div class="form-group input-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <input type="text" class="form-control" name="EstimatedSalary" placeholder="Estimated Salary"
+                        required>
+                </div>
+                <div class="form-group input-icon">
+                    <i class="fas fa-venus-mars"></i>
+                    <input type="text" class="form-control" name="Gender" placeholder="Gender" required>
+                </div>
+                
+                
+                
+                <div class="form-group input-icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <input type="text" class="form-control" name="Exited" placeholder="Debt" required>
+                </div>
+               
+
+              
+                <div class="form-group input-icon">
+                    <i class="fas fa-layer-group"></i>
+                    <input type="text" class="form-control" name="NumOfProducts" placeholder="Num Of Products"
+                        required>
+                </div>
+                
+                <div class="form-group mt-4 text-center">
+                    <input type="submit" class="btn btn-primary" value="CHECK">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, only required if you're using Bootstrap JS components) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
